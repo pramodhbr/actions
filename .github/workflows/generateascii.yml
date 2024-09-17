@@ -1,0 +1,25 @@
+name: Print ascii key
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ascii:
+    runs-on: ubuntu-latest
+    steps:
+     - name: checkout to repository
+       uses: actions/checkout@v4
+    
+     - name: Install dependency
+       run: sudo apt-get install cowsay -y
+
+     - name: Generate ASCII work
+       run: cowsay -f dragon "Run for cover" >> dragon.txt
+
+     - name: Test file exists
+       run: grep -i "dragon" dragon.txt
+       
+     - name: read file
+       run: cat dragon.txt
