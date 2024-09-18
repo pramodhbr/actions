@@ -2,8 +2,8 @@ name: Print ascii key
 
 on:
   push:
-    branches:
-      - main
+  workflow_dispatch:
+    
 
 jobs:
   job-1:
