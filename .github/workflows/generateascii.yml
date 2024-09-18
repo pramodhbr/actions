@@ -42,7 +42,9 @@ jobs:
         name: myfile
         
     - name: Run following commands
+      timeout-minutes: 1
       run: |
         grep -i "dragon" dragon.txt
         cat dragon.txt
         ls -ltra
+        sleep 6000s
