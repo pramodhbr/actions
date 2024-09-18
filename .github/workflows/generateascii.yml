@@ -20,7 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run command
-        run: cowsay -f dragon "Run for cover I am dragon" >> dragon.txt
+        run: |
+          sudo apt-get install cowsay -y
+          cowsay -f dragon "Run for cover I am dragon" >> dragon.txt
       
       - uses: actions/upload-artifact@v4
         with:
