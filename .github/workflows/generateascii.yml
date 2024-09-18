@@ -12,14 +12,5 @@ jobs:
      - name: checkout to repository
        uses: actions/checkout@v4
     
-     - name: Install dependency
-       run: sudo apt-get install cowsay -y
-
-     - name: Generate ASCII work
-       run: cowsay -f dragon "Run for cover I am dragon" >> dragon.txt
-
-     - name: Test file exists
-       run: grep -i "dragon" dragon.txt
-       
-     - name: read file
-       run: cat dragon.txt
+     - name: Exexute shell script
+       run: ./script.sh
