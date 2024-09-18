@@ -16,6 +16,9 @@ jobs:
        run: sudo apt-get install cowsay -y
 
   job-2:
+    concurrency:
+      group: prodcution-deployment
+      cancel-in-progress: true
     needs: job-1
     runs-on: ubuntu-latest
     steps:
