@@ -16,10 +16,10 @@ jobs:
        run: sudo apt-get install cowsay -y
 
   job-2:
-  # This concurrency cancels the other workflow
+  # This concurrency cancels/wait for the other workflow
     concurrency:
       group: prodcution-deployment
-      cancel-in-progress: true
+      cancel-in-progress: false
     needs: job-1
     runs-on: ubuntu-latest
     steps:
