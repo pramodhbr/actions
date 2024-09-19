@@ -1,7 +1,8 @@
 name: Fetch GitHub Event Info
 
 on: 
-  push:  # You can trigger it with other events like pull_request, workflow_dispatch, etc.
+  workflow_dispatch:
+      # You can trigger it with other events like pull_request, workflow_dispatch, etc.
 
 jobs:
   fetch-event-info:
