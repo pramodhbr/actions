@@ -1,0 +1,26 @@
+name: Workflow filters
+
+on:
+  workflow_dispatch:
+#   schedule:
+#    - cron: "*/59 * * * *"
+  push:
+# This will ignore the branches which you have mentioned below and it will not trigger the job
+    branches-ignore:
+     - feature/*
+     - test/**
+
+  pull_request:
+    types: 
+     - opened
+     - closed
+    branches:
+     - main
+    paths-ignore:
+     - README.md
+
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+        steps:
+         - run: echo "This gives respective event type ${{ github.event_name }}"
