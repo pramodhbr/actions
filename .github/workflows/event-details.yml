@@ -1,13 +1,14 @@
-name: Github events information
-on:
-  workflow_dispatch:
-    
-        
+name: Fetch GitHub Event Info
+
+on: 
+  push:  # You can trigger it with other events like pull_request, workflow_dispatch, etc.
+
 jobs:
-  prJob:    
-    name: Print info
+  fetch-event-info:
     runs-on: ubuntu-latest
     steps:
-      - name: Print GitHub event action
-        run: |
-          echo "${{ github.event }}"
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print GitHub Event Info
+        run: echo "${{ toJson(github.event) }}"
