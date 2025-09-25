@@ -41,6 +41,9 @@ jobs:
               uses: actions/download-artifact@v4 # Use the latest version
               with:
                 path: dragon.txt
+
+            - name: checkout to repository
+              uses: actions/checkout@v3
             
             - name: read dragon text file
               run: cat dragon.txt
