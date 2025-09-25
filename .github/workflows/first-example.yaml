@@ -13,4 +13,4 @@ jobs:
 
             - name: Welcome message
               run: |
-               - cat README.md
+                cat README.md
